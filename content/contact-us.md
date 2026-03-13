@@ -1,7 +1,7 @@
 ---
 title: "Contact Us"
 summary: "Booking and inquiry information for Pacific Sound Brass."
-heroImage: "/images/legacy/footer.jpg"
+heroImage: "/images/media-gallery/PacificSound_2025_SamZauschPhoto-0071.jpg"
 ---
 
 <div class="surface contact-form-wrap">
