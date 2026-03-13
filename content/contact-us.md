@@ -12,10 +12,8 @@ heroImage: "/images/media-gallery/PacificSound_2025_SamZauschPhoto-0071.jpg"
 <form class="contact-form" method="POST" data-netlify="true" name="contact" netlify-honeypot="bot-field" action="/thank-you/">
   <input type="hidden" name="form-name" value="contact">
   <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
-  <label>First name<input type="text" name="first-name" required></label>
-  <label>Last name<input type="text" name="last-name"></label>
+  <label>Name<input type="text" name="name" required></label>
   <label>Email<input type="email" name="email" required></label>
-  <label>Phone<input type="text" name="phone"></label>
   <label>Comment or message<textarea name="message" required></textarea></label>
   <button class="button" type="submit">Send inquiry</button>
 </form>
