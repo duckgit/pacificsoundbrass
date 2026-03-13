@@ -125,7 +125,6 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.7rem); }
 .bio-card img {
   width:100%;
   height:auto;
-  aspect-ratio: 4 / 5;
   min-height: 280px;
   object-fit: cover;
   object-position: center top;
@@ -212,8 +211,9 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.7rem); }
   .bio-card, .event-card { grid-template-columns: 1fr; }
   .bio-card img {
     min-height: 0;
-    aspect-ratio: 4 / 3;
-    max-height: 420px;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
   }
   .embed-frame { min-height: 560px; }
   .lightbox { grid-template-columns: 1fr; padding: 1rem; }
