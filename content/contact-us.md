@@ -5,6 +5,10 @@ heroImage: "/images/legacy/footer.jpg"
 ---
 
 <div class="surface contact-form-wrap">
+    <p class="section-label">Get in touch</p>
+    <h2>Contact Pacific Sound Brass</h2>
+    <p>Fill out the form below to inquire about booking, concerts, educational programs, or special events.</p>
+
     <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/">
       <input type="hidden" name="form-name" value="contact">
       <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
