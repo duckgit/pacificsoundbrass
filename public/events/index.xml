@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Events on Pacific Sound Brass</title>
+    <link>http://localhost:1314/events/</link>
+    <description>Recent content in Events on Pacific Sound Brass</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1314/events/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Private Party</title>
+      <link>http://localhost:1314/event/private-party/</link>
+      <pubDate>Thu, 04 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1314/event/private-party/</guid>
+      <description>Fourth of July private event in Point Loma.</description>
+    </item>
+    <item>
+      <title>Celebrate America at Shadow Mountain Church, Southbay Campus</title>
+      <link>http://localhost:1314/event/celebrate-america-at-shadow-mountain-church-southbay-campus/</link>
+      <pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1314/event/celebrate-america-at-shadow-mountain-church-southbay-campus/</guid>
+      <description>Patriotic music across two morning services and outdoor congregational celebration.</description>
+    </item>
+    <item>
+      <title>The Glen at Scripps Ranch</title>
+      <link>http://localhost:1314/event/the-glen-at-scripps-ranch/</link>
+      <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1314/event/the-glen-at-scripps-ranch/</guid>
+      <description>A return engagement for residents of The Glen retirement community in Scripps Ranch.</description>
+    </item>
+    <item>
+      <title>Point Loma Nazarene University Graduate Commencement</title>
+      <link>http://localhost:1314/event/point-loma-nazarene-university-graduate-commencement/</link>
+      <pubDate>Fri, 03 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1314/event/point-loma-nazarene-university-graduate-commencement/</guid>
+      <description>Ceremonial music for the graduate class of Point Loma Nazarene University.</description>
+    </item>
+    <item>
+      <title>Concert Series: Pacific Sound Brass Quintet</title>
+      <link>http://localhost:1314/event/concert-series-pacific-sound-brass-quintet/</link>
+      <pubDate>Sun, 15 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1314/event/concert-series-pacific-sound-brass-quintet/</guid>
+      <description>Back by popular demand, PSBQ brings a lively and educational brass program to Rancho Bernardo Community Church.</description>
+    </item>
+  </channel>
+</rss>

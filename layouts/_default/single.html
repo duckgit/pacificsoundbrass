@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section class="page-hero {{ with .Params.heroClass }}{{ . }}{{ end }}">
+  <div class="wrap page-hero-inner">
+    <div>
+      <p class="eyebrow">Pacific Sound Brass</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.summary }}<p class="lead narrow">{{ . }}</p>{{ end }}
+    </div>
+    {{ with .Params.heroImage }}
+    <div class="page-hero-media">
+      <img src="{{ . }}" alt="{{ $.Title }}">
+    </div>
+    {{ end }}
+  </div>
+</section>
+<section class="section wrap page-body">
+  {{ .Content }}
+</section>
+{{ end }}

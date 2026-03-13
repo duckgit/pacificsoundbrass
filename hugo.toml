@@ -1,0 +1,45 @@
+baseURL = 'http://localhost:1314/'
+languageCode = 'en-us'
+title = 'Pacific Sound Brass'
+disableKinds = ['taxonomy', 'term']
+
+[params]
+  description = 'Pacific Sound Brass is a San Diego brass ensemble presenting inventive concerts, educational programming, and finely crafted brass performances.'
+  phone = '877-849-PSBQ (7727)'
+  email = 'booking@pacificsoundbrass.org'
+  facebook = 'https://www.facebook.com/PacificSoundQuintet'
+  youtube = 'https://www.youtube.com/@FirstPresSanDiego'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[[menus.main]]
+  name = 'About Us'
+  pageRef = '/about-us'
+  weight = 10
+[[menus.main]]
+  name = 'Bios'
+  pageRef = '/bios'
+  weight = 20
+[[menus.main]]
+  name = 'Calendar'
+  pageRef = '/calendar'
+  weight = 30
+[[menus.main]]
+  name = 'Christmas Brass & Organ'
+  pageRef = '/christmas-brass-organ'
+  weight = 40
+[[menus.main]]
+  name = 'Listen'
+  pageRef = '/listen'
+  weight = 50
+[[menus.main]]
+  name = 'Media'
+  pageRef = '/media'
+  weight = 60
+[[menus.main]]
+  name = 'Contact Us'
+  pageRef = '/contact-us'
+  weight = 70

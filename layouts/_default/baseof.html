@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Params.summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="wrap header-wrap">
+        <a class="brand" href="/" aria-label="Pacific Sound Brass home">
+          <img src="/images/2025/logo.png" alt="Pacific Sound Brass logo">
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          {{ range site.Menus.main }}
+          <a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} class="active"{{ end }}>{{ .Name }}</a>
+          {{ end }}
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-band"></div>
+      <div class="wrap footer-grid">
+        <div>
+          <img class="footer-logo" src="/images/2025/logo.png" alt="Pacific Sound Brass logo">
+          <p class="footer-copy">Pacific Sound Brass presents polished brass chamber music for concert halls, churches, community programs, and special events throughout San Diego and beyond.</p>
+        </div>
+        <div>
+          <h2>Explore</h2>
+          <ul>
+            {{ range site.Menus.main }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+        <div>
+          <h2>Booking</h2>
+          <ul>
+            <li><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></li>
+            <li><a href="tel:+18778497727">{{ site.Params.phone }}</a></li>
+            <li>San Diego, California</li>
+            <li><a href="{{ site.Params.facebook }}">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">© {{ now.Year }} Pacific Sound Brass · San Diego, CA</div>
+    </footer>
+  </div>
+  <script>
+    const button = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('#site-nav');
+    if (button && nav) {
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+      });
+    }
+
+    const galleryLinks = Array.from(document.querySelectorAll('[data-lightbox-item]'));
+    const lightbox = document.querySelector('[data-lightbox]');
+    if (galleryLinks.length && lightbox) {
+      const lightboxImage = lightbox.querySelector('.lightbox-image');
+      const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+      const closeButton = lightbox.querySelector('.lightbox-close');
+      const prevButton = lightbox.querySelector('.lightbox-prev');
+      const nextButton = lightbox.querySelector('.lightbox-next');
+      let currentIndex = 0;
+
+      const renderLightbox = (index) => {
+        const item = galleryLinks[index];
+        currentIndex = index;
+        lightboxImage.src = item.getAttribute('href');
+        lightboxImage.alt = item.querySelector('img')?.alt || item.dataset.caption || '';
+        lightboxCaption.textContent = item.dataset.caption || '';
+      };
+
+      const openLightbox = (index) => {
+        renderLightbox(index);
+        lightbox.hidden = false;
+        document.body.classList.add('lightbox-open');
+      };
+
+      const closeLightbox = () => {
+        lightbox.hidden = true;
+        document.body.classList.remove('lightbox-open');
+      };
+
+      const showNext = () => renderLightbox((currentIndex + 1) % galleryLinks.length);
+      const showPrev = () => renderLightbox((currentIndex - 1 + galleryLinks.length) % galleryLinks.length);
+
+      galleryLinks.forEach((link, index) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          openLightbox(index);
+        });
+      });
+
+      closeButton.addEventListener('click', closeLightbox);
+      nextButton.addEventListener('click', showNext);
+      prevButton.addEventListener('click', showPrev);
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (lightbox.hidden) return;
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowRight') showNext();
+        if (event.key === 'ArrowLeft') showPrev();
+      });
+    }
+  </script>
+</body>
+</html>
